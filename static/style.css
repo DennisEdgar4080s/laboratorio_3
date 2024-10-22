@@ -101,21 +101,21 @@ a.btn {
 a.btn:hover {
     text-decoration: underline;
 }
-/* Estilos generales para resetear márgenes y paddings */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-/* Estilo del cuerpo de la página */
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     padding: 20px;
 }
 
-/* Contenedor principal */
+
 .container {
     max-width: 600px;
     margin: 0 auto;
@@ -125,34 +125,34 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Título principal */
+
 h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Estilos generales para el formulario */
+
 .registro-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-/* Agrupación de elementos de formulario */
+
 .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
 }
 
-/* Estilos para las etiquetas */
+
 .form-group label {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-/* Estilos para los inputs de texto y fecha */
+
 .form-group input[type="text"],
 .form-group input[type="date"] {
     padding: 10px;
@@ -162,7 +162,7 @@ h1 {
     width: 100%;
 }
 
-/* Estilos para los radio buttons de turno */
+
 .turno-options,
 .seminarios-options {
     display: flex;
@@ -170,14 +170,14 @@ h1 {
     gap: 10px;
 }
 
-/* Espaciado y alineación para los radio y checkbox */
+
 .turno-options label,
 .seminarios-options label {
     margin-right: 15px;
     display: inline-block;
 }
 
-/* Estilo del botón de envío */
+
 .submit-btn {
     background-color: #4CAF50;
     color: white;
@@ -187,15 +187,15 @@ h1 {
     cursor: pointer;
     text-align: center;
     font-size: 16px;
-    align-self: center; /* Centra el botón */
+    align-self: center; 
 }
 
-/* Efecto hover para el botón */
+
 .submit-btn:hover {
     background-color: #45a049;
 }
 
-/* Alineación de los inputs radio y checkbox */
+
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 5px;
