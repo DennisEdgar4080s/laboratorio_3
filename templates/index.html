@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro en Seminarios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registro en Seminarios</h1>
+        
+        <form action="{{ url_for('inscribir') }}" method="POST">
+            <div class="form-section">
+                <h3>Datos</h3>
+                <label for="fecha">Fecha:</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+
+                <label>Turno:</label>
+                <input type="radio" id="manana" name="turno" value="Mañana" required>
+                <label for="manana">Mañana</label>
+
+                <input type="radio" id="tarde" name="turno" value="Tarde" required>
+                <label for="tarde">Tarde</label>
+
+                <input type="radio" id="noche" name="turno" value="Noche" required>
+                <label for="noche">Noche</label>
+            </div>
+
+            <div class="form-section">
+                <h3>Seminarios disponibles</h3>
+                <input type="checkbox" id="ai" name="seminarios" value="Inteligencia Artificial">
+                <label for="ai">Inteligencia Artificial</label><br>
+
+                <input type="checkbox" id="ml" name="seminarios" value="Machine Learning">
+                <label for="ml">Machine Learning</label><br>
+
+                <input type="checkbox" id="simulacion" name="seminarios" value="Simulación con Arena">
+                <label for="simulacion">Simulación con Arena</label><br>
+
+                <input type="checkbox" id="robotica" name="seminarios" value="Robótica Educativa">
+                <label for="robotica">Robótica Educativa</label><br>
+            </div>
+
+            <button type="submit">Enviar registro</button>
+        </form>
+
+        <h2>Listado de inscritos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Fecha</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Turno</th>
+                    <th>Seminarios</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for inscrito in inscritos %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ inscrito.fecha }}</td>
+                    <td>{{ inscrito.nombre }}</td>
+                    <td>{{ inscrito.apellido }}</td>
+                    <td>{{ inscrito.turno }}</td>
+                    <td>{{ inscrito.seminarios }}</td>
+                    <td>
+                        <a href="{{ url_for('editar', id=loop.index) }}">Editar</a>
+                        <a href="{{ url_for('eliminar', id=loop.index) }}">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
